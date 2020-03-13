@@ -1,11 +1,9 @@
-## Haku
+### Haku 🐉
 Haku is a SCSS framework.
 
 
 
-
-
-#What my framework provide you ?
+**#What my framework provide you ?
 
 Here is the list of classes you can use :
 
