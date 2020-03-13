@@ -11,7 +11,9 @@ Here is the list of classes you can use :
 
 Basic columns :
 
+'''
 .col-1 //From 1 to 12
+'''
 
 Medias queries for 3 screens sizes :
 
