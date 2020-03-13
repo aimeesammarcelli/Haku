@@ -1,0 +1,381 @@
+$nbColumns : 12;
+$margin:20px;
+$primaryColor: #ECEDF1;
+$secondaryColor: #508FB0;
+$hoverColor: pink;
+$shadowColor: #A6ABBD;
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin-left: $margin;
+    margin-right: $margin;
+}
+
+article{
+    min-height: 5rem;
+    background: $secondaryColor;
+    border: 1px solid black;
+}
+
+// ------------------- création des columns ------------------
+
+
+.columns{
+    overflow: hidden;
+>div{
+    margin-right: - $margin;
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+
+    > * {
+        // flex-grow: 1;
+        margin-bottom: #{$margin};
+        margin-right: $margin;
+    }
+
+    @for $i from 1 through $nbColumns{
+        .col-lg-#{$i}{
+            // flex-basis: calc(100% / #{$nbColumns} * #{$i} - #{$margin}/#{$i}-1);
+            flex-basis: calc(100% / #{$nbColumns} * #{$i} - #{$margin});
+        }
+    }
+
+}
+}
+
+@media screen and (max-width: 880px) {
+    body {
+      background-color: red;
+    }
+    
+    .columns{
+        overflow: hidden;
+    >div{
+    
+        @for $i from 1 through $nbColumns{
+            .col-md-#{$i}{
+                // flex-basis: calc(100% / #{$nbColumns} * #{$i} - #{$margin}/#{$i}-1);
+                flex-basis: calc(100% / #{$nbColumns} * #{$i} - #{$margin});
+            }
+        }
+    
+    }
+    }
+    
+    }
+
+
+@media screen and (max-width: 680px) {
+    body {
+      background-color: blue;
+    }
+    
+    .columns{
+        overflow: hidden;
+    >div{
+    
+        @for $i from 1 through $nbColumns{
+            .col-sm-#{$i}{
+                // flex-basis: calc(100% / #{$nbColumns} * #{$i} - #{$margin}/#{$i}-1);
+                flex-basis: calc(100% / #{$nbColumns} * #{$i} - #{$margin});
+            }
+        }
+    
+    }
+    }
+    
+    }
+
+
+// -------------------- Flex ---------------------------
+
+
+.flex{
+    display: flex;
+}
+
+    // -------- Align --------
+
+
+.align-right{
+    justify-content: end;
+}
+
+.align-start{
+    align-content: flex-start;
+}
+
+.align-end{
+    align-content: flex-end;
+}
+
+.align-stretch{
+    align-content: stretch;
+}
+
+.align-between{
+    align-content: space-between;
+}
+
+.align-around{
+    align-content: space-around;
+}
+
+.align-left{
+    justify-content: start;
+}
+
+.align-center{
+    justify-content: center;
+}
+
+    // -------- Direction --------
+
+.direction-row{
+    flex-direction: row;
+}
+
+.direction-row-revers{
+    flex-direction: row-reverse;
+}
+
+.direction-columns{
+    flex-direction: column;
+}
+
+.direction-columns-reverse{
+    flex-direction: column-reverse;
+}
+
+    // -------- Wrap --------
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+      
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+// Justify content
+
+.flex--justify-start {
+    justify-content: flex-start;
+  }
+  
+  .flex--justify-end {
+    justify-content: flex-end;
+  }
+  
+  .flex--justify-center {
+    justify-content: center;
+  }
+  
+  .flex--justify-between {
+    justify-content: space-between;
+  }
+  
+  .flex--justify-around {
+    justify-content: space-around;
+  }
+  
+  .flex--justify-evenly {
+    justify-content: space-evenly;
+  }
+  
+  // Align items
+
+  .flex--align-start {
+    align-items: flex-start;
+  }
+  
+  .flex--align-end {
+    align-items: flex-end;
+  }
+  
+  .flex--align-center {
+    align-items: center;
+  }
+  
+  .flex--align-baseline {
+    align-items: baseline;
+  }
+  
+  .flex--align-stretch {
+    align-items: stretch;
+  }
+      
+
+// -------------------- Colors ---------------------------
+
+
+.background-color-primary{
+    background-color: $primaryColor;
+}
+
+.background-color-secondary{
+    background-color: $secondaryColor;
+}
+
+.text-color-primary{
+    color: $primaryColor;
+}
+
+.text-color-secondary{
+    color: $secondaryColor;
+}
+
+// -------------------- Typographie ---------------------------
+
+
+.decoration-none{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+    color: $hoverColor;
+}
+
+a:visited{
+    color: $secondaryColor;
+    text-decoration: none;
+}
+
+.text-underline{
+    text-decoration: underline;  
+}
+
+.text-strong{
+    font-weight: bold;
+}
+
+.text-quote{
+    quotes: initial;
+}
+
+.text-italic{
+    font-style: italic;
+}
+
+.text-oblique{
+    font-style: oblique;
+}
+
+.text-uppercase{
+    text-transform: uppercase;
+}
+
+.text-align-left{
+    text-align: left;
+}
+
+.text-align-center{
+    text-align: center;
+}
+
+.text-align-right{
+    text-align: right;
+}
+
+.text-truncate{
+    text-overflow: ellipsis;
+}
+
+
+.text-justify-center{
+    justify-content: center;
+}
+
+.text-justify-right{
+    justify-content: right;
+}
+
+.text-justify-left{
+    justify-content: left;
+}
+// -------------------- Margin - Padding ---------------------------
+
+$spaceamounts: (5, 10, 15, 20, 25, 30, 35, 40, 55);
+$sides: (top, bottom, left, right);
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px;
+    }
+  
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px;
+    }
+  }
+}
+
+// -------------------- Background ---------------------------
+
+.background-fixed{
+    background-image: url(../glace/glace.jpg);
+    background-attachment: fixed;
+    // background-repeat: no-repeat;
+}
+
+// -------------------- Shadow ---------------------------
+
+.shadow-double{
+    box-shadow: 10px 10px 20px $shadowColor, -10px -10px 20px #8D95B2;
+}
+
+.shadow{
+    box-shadow: 5px 10px 40px #8D95B2;
+}
+
+.shadow-interieure {
+    box-shadow: inset 5em 1em 30px $shadowColor;
+  }
+
+
+// -------------------- Composants - Buttons ---------------------------
+
+.button-color{
+    color: white !important;
+    background-color: $secondaryColor;
+}
+
+.button-color-none{
+    color: $secondaryColor !important;
+    background-color: white;
+}
+
+.button-border{
+    border: 1px solid black;
+}
+
+.button-radius{
+    border-radius: 5px;
+}
+
+.button-color:hover{
+    background-color: white;
+    color: $secondaryColor !important;
+}
+
+// -------------------- Composants - Cards ---------------------------
+
+
+.cards{
+    
+    max-width: 30%;
+    >div{
+        display: flex;
+        flex-wrap: wrap; 
+    }
+    
+    h2{
+        color: $secondaryColor !important;
+    }
+
+}
