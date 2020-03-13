@@ -3,19 +3,19 @@ Haku is a SCSS framework.
 
 
 
-**#What my framework provide you ?
+#What my framework provide you ?
 
 Here is the list of classes you can use :
 
 
-**Basic columns :
+**Basic columns :**
 
 ```
 .col-1 //From 1 to 12
 ```
 
 
-**Medias queries for 3 screens sizes :
+**Medias queries for 3 screens sizes :**
 
 Large screen size :
 
@@ -103,7 +103,7 @@ Shadow
 .shadow-..
 ```
 
-Exemple :
+**Exemple :**
 
 ```
     <section class="cards button-border m-t-55 button-radius">
